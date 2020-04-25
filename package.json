@@ -3,10 +3,16 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "devstart": "nodemon ./bin/www",
+    "client": "cd ../simple-app-client && npm start",
+    "start-both": "concurrently \" npm run devstart\" \" npm run client\" "
   },
   "dependencies": {
+    "acorn": "^7.1.1",
     "async": "^3.2.0",
+    "clean-css": "^4.2.3",
+    "constantinople": "^4.0.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^8.2.0",
@@ -16,5 +22,9 @@
     "jade": "~1.11.0",
     "mongoose": "^5.9.10",
     "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "nodemon": "^2.0.3"
   }
 }
